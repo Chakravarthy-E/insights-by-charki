@@ -8,9 +8,9 @@ interface ArticleProps {
 
 function ArticleCard({ article }: ArticleProps) {
   return (
-    <div key={article._id} className=" space-y-2">
+    <div key={article._id} className=" space-y-2 opacity-80 hover:opacity-100">
       <Link href={`/${article.category}/${article._id}`}>
-        <p className="text-2xl font-semibold hover:underline decoration-purple-700 font-outfit">
+        <p className="text-2xl font-semibold underline decoration-purple-700 font-outfit">
           {article.title}
         </p>
       </Link>

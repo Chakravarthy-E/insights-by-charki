@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/category/:id",
+      "destination": "/[category]/[id]"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}

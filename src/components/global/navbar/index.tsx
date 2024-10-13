@@ -9,7 +9,7 @@ function Navbar() {
       <Logo />
       <ul className="flex items-center space-x-10 font-semibold text-xl font-raleway">
         <li>
-          <Link href={"/categories"}>Categories</Link>
+          <Link href={"/collections"}>Collections</Link>
         </li>
         <li>
           <Link href={"/snippets"}>Snippets</Link>
