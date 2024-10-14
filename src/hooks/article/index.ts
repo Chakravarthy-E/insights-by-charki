@@ -45,7 +45,7 @@ export const useFetchCollections = () => {
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/articles/collections`
+        `${process.env.NEXT_PUBLIC_API}/collections`
       );
       return response.data;
     },
@@ -58,7 +58,7 @@ export const useFetchArticleByCategory = (category: string) => {
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/articles/collections/${category}`
+        `${process.env.NEXT_PUBLIC_API}/collections/${category}`
       );
       return response.data;
     },

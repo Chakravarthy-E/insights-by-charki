@@ -17,6 +17,7 @@ export interface ArticleTypes {
   };
   isFeatured: boolean;
   slug: string;
+  createdAt: string;
 }
 
 function Articles() {
@@ -29,7 +30,7 @@ function Articles() {
       <h1 className="uppercase text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
         Articles
       </h1>
-      <div className="space-y-3">
+      <div className="flex flex-col space-y-5">
         {data?.publishedArticles?.map((article: ArticleTypes) => (
           <ArticleCard article={article} key={article._id} />
         ))}

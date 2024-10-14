@@ -8,12 +8,13 @@ function Navbar() {
     <nav className="flex items-center justify-between w-full">
       <Logo />
       <ul className="flex items-center space-x-10 font-semibold text-xl font-raleway">
-        {/* <li>
-          <Link href={"/collections"}>Collections</Link>
-        </li>
+        {/* 
         <li>
           <Link href={"/snippets"}>Snippets</Link>
         </li> */}
+        <li>
+          <Link href={"/collections"}>Collections</Link>
+        </li>
         <li>
           <Link href={"/about"}>About</Link>
         </li>

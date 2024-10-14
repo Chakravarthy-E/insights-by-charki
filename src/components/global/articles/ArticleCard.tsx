@@ -1,6 +1,7 @@
 import React from "react";
 import { ArticleTypes } from ".";
 import Link from "next/link";
+import { format } from "date-fns";
 
 interface ArticleProps {
   article: ArticleTypes;
@@ -8,24 +9,27 @@ interface ArticleProps {
 
 function ArticleCard({ article }: ArticleProps) {
   return (
-    <div
-      key={article.slug}
-      className="space-y-2 opacity-80 hover:opacity-100 transition-opacity duration-300"
-    >
-      <Link href={`/${article.category}/${article.slug}`}>
-        <p className="text-xl sm:text-2xl md:text-3xl font-semibold underline decoration-purple-700 font-outfit">
-          {article.title}
+    <Link href={`/${article.category}/${article.slug}`}>
+      <div
+        key={article.slug}
+        className=" opacity-80 hover:opacity-100 transition-opacity duration-300 group "
+      >
+        <p
+          className="text-lg sm:text-xl md:text-2xl font-semibold font-outfit group-hover:text-blue-500"
+          id="title"
+        >
+          {article.title}{" "}
+          <span className="text-sm font-outfit text-muted-foreground">
+            {article?.createdAt
+              ? format(new Date(article?.createdAt), "dd-MMMM-yyyy")
+              : "N/A"}
+          </span>
         </p>
-      </Link>
-      <p className="text-sm sm:text-base text-muted-foreground font-raleway">
-        {article.description}
-      </p>
-      <Link href={`/${article.category}/${article.slug}`}>
-        <p className="text-sm sm:text-base font-semibold font-outfit">
-          Read more →
+        <p className="text-sm sm:text-base text-muted-foreground font-raleway">
+          {article.description}
         </p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 
