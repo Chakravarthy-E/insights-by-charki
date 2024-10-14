@@ -40,3 +40,29 @@ export const useFetch = (url: string) => {
   });
   return { data, isError, isSuccess, isLoading, isPending };
 };
+
+export const useFetchCollections = () => {
+  const { data, isLoading, isSuccess, isError, isPending } = useQuery({
+    queryKey: ["articles"],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API}/articles/collections`
+      );
+      return response.data;
+    },
+  });
+  return { data, isError, isSuccess, isLoading, isPending };
+};
+
+export const useFetchArticleByCategory = (category: string) => {
+  const { data, isLoading, isSuccess, isError, isPending } = useQuery({
+    queryKey: ["articles"],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API}/articles/collections/${category}`
+      );
+      return response.data;
+    },
+  });
+  return { data, isError, isSuccess, isLoading, isPending };
+};

@@ -39,7 +39,7 @@ function Article({ params }: Props) {
         <div
           dangerouslySetInnerHTML={{ __html: data?.content || "" }}
           className="font-raleway prose-h3:text-xl prose-h3:text-violet-600 prose-pre:bg-gray-900 text-muted-foreground text-justify prose max-w-none 
-          prose-ol:text-gray-500 prose-strong:text-gray-400 prose-pre:language-javascript prose-code:text-violet-500 prose-code:font-outfit prose-code:tracking-normal"
+          prose-ol:text-gray-500 prose-strong:text-gray-400 prose-pre:language-javascript prose-code:text-white prose-code:font-mono prose-code:tracking-normal"
         />
       </article>
     </>
