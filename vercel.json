@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/collections/:category/:id",
+      "source": "/:category/:id",
       "destination": "/[category]/[id]"
     },
     {
