@@ -1,8 +1,24 @@
 {
   "rewrites": [
     {
-      "source": "/category/:id",
+      "source": "/collections/:category/:id",
       "destination": "/[category]/[id]"
+    },
+    {
+      "source": "/collections/:category",
+      "destination": "/[category]"
+    },
+    {
+      "source": "/about",
+      "destination": "/about"
+    },
+    {
+      "source": "/snippets",
+      "destination": "/snippets"
+    },
+    {
+      "source": "/collections",
+      "destination": "/collections"
     },
     {
       "source": "/(.*)",
