@@ -43,7 +43,10 @@ function Article({ params }: Props) {
           prose-ol:text-gray-500 prose-strong:text-gray-400 prose-pre:language-javascript prose-code:text-white prose-code:font-mono prose-code:tracking-normal"
         />
         <p className="capitalize text-end">
-          last updated: {format(data?.updatedAt, "dd-MMMM-yyyy")}
+          last updated:{" "}
+          {data?.updatedAt
+            ? format(new Date(data?.updatedAt), "dd-MMMM-yyyy")
+            : "N/A"}
         </p>
       </article>
     </>
