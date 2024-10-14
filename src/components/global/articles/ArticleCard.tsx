@@ -8,17 +8,22 @@ interface ArticleProps {
 
 function ArticleCard({ article }: ArticleProps) {
   return (
-    <div key={article.slug} className=" space-y-2 opacity-80 hover:opacity-100">
+    <div
+      key={article.slug}
+      className="space-y-2 opacity-80 hover:opacity-100 transition-opacity duration-300"
+    >
       <Link href={`/${article.category}/${article.slug}`}>
-        <p className="text-2xl font-semibold underline decoration-purple-700 font-outfit">
+        <p className="text-xl sm:text-2xl md:text-3xl font-semibold underline decoration-purple-700 font-outfit">
           {article.title}
         </p>
       </Link>
-      <p className="text-muted-foreground font-raleway">
+      <p className="text-sm sm:text-base text-muted-foreground font-raleway">
         {article.description}
       </p>
       <Link href={`/${article.category}/${article.slug}`}>
-        <p className="font-semibold font-outfit">Read more → </p>
+        <p className="text-sm sm:text-base font-semibold font-outfit">
+          Read more →
+        </p>
       </Link>
     </div>
   );

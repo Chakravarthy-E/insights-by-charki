@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto w-[800px] py-10`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased container mx-auto sm:max-w[640px] md:max-w-[768px] lg:[800px] xl:max-w-[1024px] px-4 py-10`}
       >
         <ReactQueryProvider>
           <ThemeProvider

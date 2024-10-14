@@ -22,17 +22,17 @@ function About() {
 
       <div className="flex flex-wrap gap-3">
         <SocialCard
-          icon={<Linkedin className="text-blue-500" />}
+          icon={<Linkedin className="dark:text-blue-500" />}
           link="https://www.linkedin.com/in/chakravarthy-e/"
           platform="LinkedIn"
         />
         <SocialCard
-          icon={<Github className="text-blue-500 text-3xl" />}
+          icon={<Github className="dark:text-blue-500 text-3xl" />}
           link="https://github.com/Chakravarthy-E/"
           platform="GitHub"
         />
         <SocialCard
-          icon={<Twitter className="text-blue-500 text-3xl" />}
+          icon={<Twitter className="dark:text-blue-500 text-3xl" />}
           link="https://x.com/Chakravarthy__7"
           platform="Twitter"
         />

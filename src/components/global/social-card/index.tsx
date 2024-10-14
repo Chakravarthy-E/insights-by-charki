@@ -11,7 +11,7 @@ type Props = {
 function SocialCard({ platform, link, icon }: Props) {
   return (
     <Link href={link}>
-      <div className="w-52 h-52 space-y-5 rounded-lg flex items-center justify-center flex-col bg-gray-800">
+      <div className="w-52 h-52 space-y-5 rounded-lg flex items-center justify-center flex-col dark:bg-gray-800 bg-muted-foreground text-white">
         <div>{icon}</div>
         <p>{platform}</p>
       </div>

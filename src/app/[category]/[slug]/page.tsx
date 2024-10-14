@@ -35,14 +35,16 @@ function Article({ params }: Props) {
         <meta name="description" content={data?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <article className="py-10 space-y-4">
-        <h1 className="font-outfit text-3xl">{data?.title}</h1>
+      <article className="py-8 px-4 sm:py-10 sm:px-6 lg:py-12 lg:px-8 space-y-6">
+        <h1 className="font-outfit text-2xl sm:text-3xl lg:text-4xl text-center">
+          {data?.title}
+        </h1>
         <div
           dangerouslySetInnerHTML={{ __html: data?.content || "" }}
-          className="font-raleway prose-h3:text-xl prose-h3:text-violet-600 prose-pre:bg-gray-900 text-muted-foreground text-justify prose max-w-none 
+          className="font-raleway prose-h3:text-lg sm:prose-h3:text-xl lg:prose-h3:text-2xl prose-h3:text-violet-600 prose-pre:bg-gray-900 text-muted-foreground text-justify prose max-w-none 
           prose-ol:text-gray-500 prose-strong:text-gray-400 prose-pre:language-javascript prose-code:text-white prose-code:font-mono prose-code:tracking-normal"
         />
-        <p className="capitalize text-end">
+        <p className="text-sm sm:text-base text-end font-outfit">
           last updated:{" "}
           {data?.updatedAt
             ? format(new Date(data?.updatedAt), "dd-MMMM-yyyy")
