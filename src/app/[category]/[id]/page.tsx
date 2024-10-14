@@ -4,6 +4,7 @@ import { useFetchArticle } from "@/hooks/article";
 import React from "react";
 import Head from "next/head";
 import { notFound } from "next/navigation";
+import { format } from "date-fns";
 
 type Props = {
   params: {
@@ -41,6 +42,9 @@ function Article({ params }: Props) {
           className="font-raleway prose-h3:text-xl prose-h3:text-violet-600 prose-pre:bg-gray-900 text-muted-foreground text-justify prose max-w-none 
           prose-ol:text-gray-500 prose-strong:text-gray-400 prose-pre:language-javascript prose-code:text-white prose-code:font-mono prose-code:tracking-normal"
         />
+        <p className="capitalize text-end">
+          last updated: {format(data?.updatedAt, "dd-MMMM-yyyy")}
+        </p>
       </article>
     </>
   );
