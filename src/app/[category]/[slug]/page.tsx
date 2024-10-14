@@ -8,13 +8,13 @@ import { format } from "date-fns";
 
 type Props = {
   params: {
-    id: string;
+    slug: string;
   };
 };
 
 function Article({ params }: Props) {
-  const id = params.id;
-  const { data, isLoading, error, isError } = useFetchArticle(id);
+  const slug = params.slug;
+  const { data, isLoading, error, isError } = useFetchArticle(slug);
 
   if (isLoading) {
     return (

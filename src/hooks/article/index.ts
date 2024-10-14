@@ -2,7 +2,6 @@
 
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useState } from "react";
 
 export const useFetchArticles = () => {
   const { data, isLoading } = useQuery({
@@ -17,12 +16,12 @@ export const useFetchArticles = () => {
   return { data, isLoading };
 };
 
-export const useFetchArticle = (id: string) => {
+export const useFetchArticle = (slug: string) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/${id}`
+        `${process.env.NEXT_PUBLIC_API}/article/${slug}`
       );
       return response.data.article;
     },

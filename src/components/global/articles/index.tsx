@@ -16,6 +16,7 @@ export interface ArticleTypes {
     url: string;
   };
   isFeatured: boolean;
+  slug: string;
 }
 
 function Articles() {
