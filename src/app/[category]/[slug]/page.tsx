@@ -31,7 +31,7 @@ function Article({ params }: Props) {
   return (
     <>
       <Head>
-        <title>{data?.title}</title>
+        <title>{data?.title ? data?.title : "IBC"}</title>
         <meta name="description" content={data?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
