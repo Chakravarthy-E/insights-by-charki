@@ -22,7 +22,7 @@ function Category({ params }: Props) {
       <h1 className="uppercase text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
         {category}
       </h1>
-      <div className="space-y-3">
+      <div className="grid lg:grid-cols-3 gap-x-2 gap-y-2  md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
         {data?.articles?.map((article: ArticleTypes) => (
           <ArticleCard article={article} key={article._id} />
         ))}
