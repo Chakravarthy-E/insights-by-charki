@@ -17,7 +17,7 @@ function Collections() {
   }
   return (
     <div>
-      <h1 className="uppercase text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
+      <h1 className="capitalize text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
         Collections
       </h1>
       <div className="flex space-x-2 flex-wrap">

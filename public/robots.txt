@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://insights-by-charki.vercel.app
+
+# Sitemaps
+Sitemap: https://insights-by-charki.vercel.app/sitemap.xml
