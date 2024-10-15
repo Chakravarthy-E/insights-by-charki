@@ -6,13 +6,16 @@ import axios from "axios";
 export const useFetchArticles = () => {
   const { data, isLoading } = useQuery({
     queryKey: ["articles"],
+
     queryFn: async () => {
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_API}/articles?published=true`
       );
       return response.data;
     },
+    staleTime: 0,
   });
+
   return { data, isLoading };
 };
 
@@ -25,6 +28,7 @@ export const useFetchArticle = (slug: string) => {
       );
       return response.data.article;
     },
+    staleTime: 0,
   });
   return { data, isLoading, isError, error };
 };
@@ -49,6 +53,7 @@ export const useFetchCollections = () => {
       );
       return response.data;
     },
+    staleTime: 0,
   });
   return { data, isError, isSuccess, isLoading, isPending };
 };
@@ -62,6 +67,7 @@ export const useFetchArticleByCategory = (category: string) => {
       );
       return response.data;
     },
+    staleTime: 0,
   });
   return { data, isError, isSuccess, isLoading, isPending };
 };
