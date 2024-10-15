@@ -39,6 +39,15 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
+            {/* <CustomBreadCrumb
+              homeElement="Home"
+              separator={
+                <SlashIcon className="h-4 w-4 text-muted-foreground" />
+              }
+              containerClasses="space-x-2"
+              listClasses="text-muted-foreground hover:text-primary"
+              activeClasses="text-primary font-bold"
+            /> */}
             {children}
           </ThemeProvider>
         </ReactQueryProvider>
