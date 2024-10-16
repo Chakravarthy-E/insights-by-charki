@@ -1,20 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "collections/:category/:id",
-      "destination": "collections/[category]/[id]"
+      "source": "/:category/:slug",
+      "destination": "/[category]/[slug]"
     },
     {
       "source": "collections/:category",
-      "destination": "collections/[category]"
-    },
-    {
-      "source": "/about",
-      "destination": "/about"
-    },
-    {
-      "source": "/snippets",
-      "destination": "/snippets"
+      "destination": "/collections/[category]"
     },
     {
       "source": "/collections",
@@ -24,5 +16,7 @@
       "source": "/(.*)",
       "destination": "/"
     }
-  ]
+  ],
+
+  "framework": "nextjs"
 }
