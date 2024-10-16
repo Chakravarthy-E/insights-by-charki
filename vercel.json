@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/:category/:id",
-      "destination": "/[category]/[id]"
+      "source": "collections/:category/:slug",
+      "destination": "collections/[category]/[slug]"
     },
     {
-      "source": "/collections/:category",
-      "destination": "/[category]"
+      "source": "collections/:category",
+      "destination": "collections/[category]"
     },
     {
       "source": "/about",
