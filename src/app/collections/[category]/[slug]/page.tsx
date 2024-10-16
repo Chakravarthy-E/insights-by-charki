@@ -14,6 +14,7 @@ type Props = {
 
 function Article({ params }: Props) {
   const slug = params.slug;
+  console.log(slug);
   const { data, isLoading, error, isError } = useFetchArticle(slug);
 
   if (isLoading) {
