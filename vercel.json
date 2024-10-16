@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "collections/:category/:slug",
-      "destination": "/collections/[category]/[slug]"
+      "source": "/:category/:slug",
+      "destination": "/[category]/[slug]"
     },
     {
       "source": "collections/:category",

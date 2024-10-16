@@ -9,7 +9,7 @@ interface ArticleProps {
 
 function ArticleCard({ article }: ArticleProps) {
   return (
-    <Link href={`/collections/${article.category}/${article.slug}`}>
+    <Link href={`/${article.category}/${article.slug}`}>
       <div
         key={article.slug}
         className=" opacity-80 hover:opacity-100 transition-opacity duration-300 group bg-gray-800 px-4 py-2 relative overflow-hidden block lg:h-60 md:h-60"
