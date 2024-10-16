@@ -10,9 +10,6 @@ function Navbar() {
         <li className="hover:text-blue-500">
           <Link href={"/collections"}>Collections</Link>
         </li>
-        <li className="hover:text-blue-500">
-          <Link href={"/about"}>About</Link>
-        </li>
       </ul>
     </nav>
   );

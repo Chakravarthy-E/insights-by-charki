@@ -4,6 +4,9 @@ import "./globals.css";
 import { ReactQueryProvider } from "@/react-query/provider";
 import Navbar from "@/components/global/navbar";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import CustomBreadCrumb from "@/components/global/bread-crumb";
+import { SlashIcon } from "@radix-ui/react-icons";
+import Footer from "@/components/global/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,7 +42,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Navbar />
-            {/* <CustomBreadCrumb
+            <CustomBreadCrumb
               homeElement="Home"
               separator={
                 <SlashIcon className="h-4 w-4 text-muted-foreground" />
@@ -47,8 +50,9 @@ export default function RootLayout({
               containerClasses="space-x-2"
               listClasses="text-muted-foreground hover:text-primary"
               activeClasses="text-primary font-bold"
-            /> */}
+            />
             {children}
+            <Footer />
           </ThemeProvider>
         </ReactQueryProvider>
       </body>

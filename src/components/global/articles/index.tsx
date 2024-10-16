@@ -23,7 +23,11 @@ export interface ArticleTypes {
 function Articles() {
   const { data, isLoading } = useFetchArticles();
   if (isLoading) {
-    return <p className="">Loading Articles.....</p>;
+    return (
+      <p className="flex items-center justify-center min-h-screen">
+        Loading Articles.....
+      </p>
+    );
   }
   return (
     <div className="my-4">

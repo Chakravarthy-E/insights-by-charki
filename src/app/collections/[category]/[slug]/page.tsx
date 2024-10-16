@@ -35,7 +35,7 @@ function Article({ params }: Props) {
         <meta name="description" content={data?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <article className="py-8 px-4 sm:py-10 sm:px-6 lg:py-12 lg:px-8 space-y-6">
+      <article className="py-8 px-4 sm:py-8 sm:px-6 lg:py-8 lg:px-8 space-y-6">
         <h1 className="font-outfit text-2xl sm:text-3xl lg:text-4xl text-center">
           {data?.title}
         </h1>

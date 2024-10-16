@@ -33,7 +33,7 @@ const CustomBreadCrumb = ({
   const pathNames = paths.split("/").filter((path) => path);
 
   return (
-    <Breadcrumb className={cn("flex items-center", containerClasses)}>
+    <Breadcrumb className={cn("flex items-center flex-wrap", containerClasses)}>
       <BreadcrumbItem>
         <BreadcrumbLink
           href="/"

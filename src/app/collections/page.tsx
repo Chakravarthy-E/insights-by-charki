@@ -13,10 +13,14 @@ function Collections() {
   console.log(data);
 
   if (isLoading) {
-    return <p>Loading....</p>;
+    return (
+      <p className="flex items-center justify-center min-h-screen">
+        Loading....
+      </p>
+    );
   }
   return (
-    <div>
+    <div className=" min-h-screen">
       <h1 className="capitalize text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
         Collections
       </h1>
