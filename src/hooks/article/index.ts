@@ -3,20 +3,20 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-export const useFetchArticles = () => {
-  const { data, isLoading } = useQuery({
+export const useFetchArticles = (page: number) => {
+  const { data, isLoading, isSuccess } = useQuery({
     queryKey: ["articles"],
 
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/articles?published=true`
+        `${process.env.NEXT_PUBLIC_API}/articles?published=true&page=${page}&limit=5`
       );
       return response.data;
     },
     staleTime: 0,
   });
 
-  return { data, isLoading };
+  return { data, isLoading, isSuccess };
 };
 
 export const useFetchArticle = (slug: string) => {

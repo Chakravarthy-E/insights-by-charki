@@ -1,7 +1,7 @@
 import React from "react";
-import { ArticleTypes } from ".";
 import Link from "next/link";
 import { format } from "date-fns";
+import { ArticleTypes } from "@/app/(dashboard)/page";
 
 interface ArticleProps {
   article: ArticleTypes;
