@@ -19,7 +19,7 @@ function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col space-y-2 lg:items-end md:items-end items-start w-full lg:w-auto md:w-auto">
+        <div className="flex flex-col space-y-2  items-start w-full lg:w-auto md:w-auto">
           <strong className="text-lg">Follow Me</strong>
           <a
             href="https://www.linkedin.com/in/chakravarthy-e"
@@ -41,7 +41,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <p className="lg:text-center md:text-center sm:text-start xs:text-center font-raleway">
+      <p className="lg:text-center md:text-center sm:text-start xs:text-center font-raleway text-muted-foreground">
         ©2024 Chakravarthy E. All rights reserved.
       </p>
     </footer>
