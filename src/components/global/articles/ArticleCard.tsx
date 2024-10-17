@@ -12,7 +12,7 @@ function ArticleCard({ article }: ArticleProps) {
     <Link href={`/${article.category}/${article.slug}`}>
       <div
         key={article.slug}
-        className=" opacity-80 hover:opacity-100 transition-opacity duration-300 group bg-gray-800 px-4 py-2 relative overflow-hidden block lg:h-60 md:h-60"
+        className=" opacity-80 hover:opacity-100 transition-opacity duration-300 group bg-gray-800 px-6 py-3 relative overflow-hidden block lg:h-60 md:h-60 rounded-tl-3xl rounded-br-3xl"
       >
         <p
           className="text-lg sm:text-xl md:text-2xl font-semibold font-outfit group-hover:text-blue-500"

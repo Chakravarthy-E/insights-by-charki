@@ -11,7 +11,7 @@ function CategoryCard({ category }: CategoryProps) {
   return (
     <Link href={`/collections/${category.category}`}>
       <p className="capitalize bg-gray-800 border w-fit px-5 py-3 rounded-md text-blue-500">
-        {category.category}
+        {category.category} <span>({category.count})</span>
       </p>
     </Link>
   );
