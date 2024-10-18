@@ -30,7 +30,7 @@ export default function Home() {
     queryKey: ["articles", currentPage],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/articles?published=true&page=${currentPage}&limit=6`
+        `${process.env.NEXT_PUBLIC_API}/articles?published=true&page=${currentPage}&limit=9`
       );
       return response.data;
     },
@@ -65,11 +65,12 @@ export default function Home() {
       <h1 className="capitalize text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
         Articles
       </h1>
-      <div className="grid lg:grid-cols-3 gap-x-2 gap-y-2 md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
+      <div className="grid lg:grid-cols-2 gap-x-2 gap-y-2 md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
         {data?.publishedArticles?.map((article: ArticleTypes) => (
           <ArticleCard article={article} key={article._id} />
         ))}
       </div>
+
       <div className="flex items-center justify-center mt-8 space-x-4 font-outfit">
         <Button
           onClick={handlePreviousPage}

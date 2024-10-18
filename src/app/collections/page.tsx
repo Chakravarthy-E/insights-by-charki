@@ -9,27 +9,27 @@ export interface CategoryType {
 }
 
 function Collections() {
-  const { data, isLoading, isError } = useFetchCollections();
-  console.log(data);
+  const { data, isLoading } = useFetchCollections();
 
-  if (isLoading) {
-    return (
-      <p className="flex items-center justify-center min-h-screen">
-        Loading....
-      </p>
-    );
-  }
   return (
-    <div className=" min-h-screen">
-      <h1 className="capitalize text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
-        Collections
-      </h1>
-      <div className="flex gap-2 flex-wrap">
-        {data?.collections?.map((category: CategoryType) => (
-          <CategoryCard key={category.category} category={category} />
-        ))}
-      </div>
-    </div>
+    <>
+      {isLoading ? (
+        <div className="flex items-center justify-center min-h-screen">
+          Loading....
+        </div>
+      ) : (
+        <div className=" min-h-screen">
+          <h1 className="capitalize text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
+            Collections
+          </h1>
+          <div className="flex gap-2 flex-wrap">
+            {data?.collections?.map((category: CategoryType) => (
+              <CategoryCard key={category.category} category={category} />
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
