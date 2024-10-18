@@ -1,5 +1,5 @@
 "use client";
-import { ArticleTypes } from "@/components/global/articles";
+import { ArticleTypes } from "@/app/(dashboard)/page";
 import ArticleCard from "@/components/global/articles/ArticleCard";
 import { useFetchArticleByCategory } from "@/hooks/article";
 import React from "react";
