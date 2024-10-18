@@ -82,6 +82,7 @@ const config: Config = {
       fontFamily: {
         raleway: ["Raleway", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
+        noto: ["Noto Sans", "sans-serif"],
       },
     },
   },
