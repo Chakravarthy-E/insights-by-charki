@@ -9,7 +9,7 @@ export const useFetchArticles = (page: number) => {
 
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/articles?published=true&page=${page}&limit=5`
+        `${process.env.NEXT_PUBLIC_API}/article/articles?published=true&page=${page}&limit=5`
       );
       return response.data;
     },
@@ -24,7 +24,7 @@ export const useFetchArticle = (slug: string) => {
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/${slug}`
+        `${process.env.NEXT_PUBLIC_API}/article/get-by-slug/${slug}`
       );
       return response.data.article;
     },
@@ -49,7 +49,7 @@ export const useFetchCollections = () => {
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/collections`
+        `${process.env.NEXT_PUBLIC_API}/article/article-collections`
       );
       return response.data;
     },
@@ -63,7 +63,7 @@ export const useFetchArticleByCategory = (category: string) => {
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/collections/${category}`
+        `${process.env.NEXT_PUBLIC_API}/article/collections/${category}`
       );
       return response.data;
     },

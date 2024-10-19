@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import { notFound, usePathname } from "next/navigation";
 import { format } from "date-fns";
-import { motion, useScroll } from "framer-motion";
 import SocialShare from "@/components/global/social-share";
 
 type Props = {
@@ -18,7 +17,6 @@ function Article({ params }: Props) {
   const pathName = usePathname();
   const slug = params.slug;
   const { data, isLoading, error, isError } = useFetchArticle(slug);
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     if (data?.title) {
@@ -39,11 +37,6 @@ function Article({ params }: Props) {
         <meta name="description" content={data?.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
 
       {isLoading ? (
         <div className="flex items-center justify-center min-h-screen">
