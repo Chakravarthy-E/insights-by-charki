@@ -13,6 +13,23 @@
       "destination": "/collections"
     },
     {
+      "source": "/dsa",
+      "destination": "/dsa"
+    },
+    {
+      "source": "/dsa/:category/:slug",
+      "destination": "/dsa/[category]/[slug]"
+    },
+    {
+      "source": "/dsa/collections",
+      "destination": "/dsa/collections"
+    },
+    {
+      "source": "/dsa/collections/:category",
+      "destination": "/dsa/collections/[category]"
+    },
+
+    {
       "source": "/(.*)",
       "destination": "/"
     }

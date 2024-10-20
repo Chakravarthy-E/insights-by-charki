@@ -1,29 +1,26 @@
 "use client";
+
+import React, { useState } from "react";
 import ArticleCard from "@/components/global/articles/ArticleCard";
-import { Button } from "@/components/ui/button";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Button } from "@/components/ui/button";
+import DSAArticleCard from "./_components/DSAArticleCard";
 import Link from "next/link";
-import { useState } from "react";
 
-export interface ArticleTypes {
+interface ArticleTypes {
   _id: string;
   title: string;
-  description: string;
   content: string;
   likes: number;
   category: string;
   published: boolean;
-  imageUrl?: {
-    public_id: string;
-    url: string;
-  };
   isFeatured: boolean;
   slug: string;
   createdAt: string;
 }
 
-export default function Home() {
+function DSAPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
@@ -31,7 +28,7 @@ export default function Home() {
     queryKey: ["articles", currentPage],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/articles?published=true&page=${currentPage}&limit=10`
+        `${process.env.NEXT_PUBLIC_API}/dsa/articles?published=true&page=${currentPage}&limit=10`
       );
       return response.data;
     },
@@ -60,14 +57,13 @@ export default function Home() {
       </p>
     );
   }
-
   return (
     <div className="my-4">
       <div className="flex items-center justify-between w-full">
-        <h1 className="capitalize text-3xl tracking-wider font-semibold text-title-color mb-4 font-outfit">
-          Articles
+        <h1 className="capitalize text-3xl tracking-wider font-semibold text-blue-500 mb-4 font-outfit">
+          DSA Articles
         </h1>
-        <Link href={"/collections"}>
+        <Link href={"/dsa/collections"}>
           <p className="text-blue-500 font-semibold hover:underline decoration-blue-500">
             See Collections
           </p>
@@ -75,7 +71,7 @@ export default function Home() {
       </div>
       <div className="grid lg:grid-cols-2 gap-x-2 gap-y-2 md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
         {data?.publishedArticles?.map((article: ArticleTypes) => (
-          <ArticleCard article={article} key={article._id} />
+          <DSAArticleCard article={article} key={article._id} />
         ))}
       </div>
 
@@ -101,3 +97,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default DSAPage;

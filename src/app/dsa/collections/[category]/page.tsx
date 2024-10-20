@@ -1,8 +1,8 @@
 "use client";
 import { ArticleTypes } from "@/app/(dashboard)/page";
-import ArticleCard from "@/components/global/articles/ArticleCard";
-import { useFetchArticleByCategory } from "@/hooks/article";
 import React from "react";
+import DSAArticleCard from "../../_components/DSAArticleCard";
+import { useFetchDSAArticleByCategory } from "../../_actions";
 
 type Props = {
   params: {
@@ -12,7 +12,7 @@ type Props = {
 
 function Category({ params }: Props) {
   const category = params.category;
-  const { data, isLoading } = useFetchArticleByCategory(category);
+  const { data, isLoading } = useFetchDSAArticleByCategory(category);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -24,7 +24,7 @@ function Category({ params }: Props) {
       </h1>
       <div className="grid lg:grid-cols-2 gap-x-2 gap-y-2  md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
         {data?.articles?.map((article: ArticleTypes) => (
-          <ArticleCard article={article} key={article._id} />
+          <DSAArticleCard article={article} key={article._id} />
         ))}
       </div>
     </div>
