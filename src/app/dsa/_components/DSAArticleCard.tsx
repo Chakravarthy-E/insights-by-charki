@@ -30,6 +30,9 @@ function DSAArticleCard({ article }: DsaArticleTypes) {
         >
           {article.title}
         </p>
+        <p className="text-sm text-muted-foreground font-raleway capitalize">
+          {article.category}
+        </p>
         <p className="text-sm font-noto text-foreground my-2">
           {article?.createdAt
             ? format(new Date(article?.createdAt), "dd-MMMM-yyyy")

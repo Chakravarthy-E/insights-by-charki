@@ -69,7 +69,7 @@ function DSAPage() {
           </p>
         </Link>
       </div>
-      <div className="grid lg:grid-cols-2 gap-x-2 gap-y-2 md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
+      <div className="grid lg:grid-cols-3 gap-x-2 gap-y-2 md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
         {data?.publishedArticles?.map((article: ArticleTypes) => (
           <DSAArticleCard article={article} key={article._id} />
         ))}
