@@ -11,10 +11,6 @@ export interface ArticleTypes {
     likes: number;
     category: string;
     published: boolean;
-    imageUrl?: {
-      public_id: string;
-      url: string;
-    };
     isFeatured: boolean;
     slug: string;
     createdAt: string;
@@ -33,10 +29,10 @@ function ArticleCard({ article }: ArticleTypes) {
           className="text-lg sm:text-xl md:text-2xl font-semibold font-noto lg:line-clamp-2 "
           id="title"
         >
-          {article.title}{" "}
+          {article.title}
         </p>
         {article.description && (
-          <p className="text-sm sm:text-base text-muted-foreground font-noto lg:line-clamp-4">
+          <p className="text-sm sm:text-base text-muted-foreground md:line-clamp-4 font-noto lg:line-clamp-4">
             {article?.description}
           </p>
         )}

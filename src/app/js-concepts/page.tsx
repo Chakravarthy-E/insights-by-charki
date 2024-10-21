@@ -1,9 +1,55 @@
+"use client";
+
 import React from "react";
+import ArticleCard from "@/components/global/articles/ArticleCard";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import Link from "next/link";
+import Loader from "@/components/global/loader";
+
+interface ArticleTypes {
+  _id: string;
+  title: string;
+  content: string;
+  likes: number;
+  category: string;
+  published: boolean;
+  isFeatured: boolean;
+  slug: string;
+  createdAt: string;
+}
 
 function JSConceptsPage() {
+  const { data, isLoading, isSuccess } = useQuery({
+    queryKey: ["articles"],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_API}/articles/js`
+      );
+      return response.data;
+    },
+  });
+
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      Coming soon...
+    <div className="my-4">
+      <div className="flex items-center justify-between w-full">
+        <h1 className="capitalize text-3xl tracking-wider font-semibold text-blue-500 mb-4 font-outfit">
+          JavaScript Articles
+        </h1>
+        <Link href={"/js-concepts/collections"}>
+          <p className="text-blue-500 font-semibold hover:underline decoration-blue-500">
+            Collections
+          </p>
+        </Link>
+      </div>
+      <div className="grid lg:grid-cols-2 gap-x-2 gap-y-2 md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
+        {data?.getJsArticles?.map((article: ArticleTypes) => (
+          <ArticleCard article={article} key={article._id} />
+        ))}
+      </div>
     </div>
   );
 }

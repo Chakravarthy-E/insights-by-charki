@@ -5,10 +5,10 @@ import axios from "axios";
 
 export const useFetchArticle = (slug: string) => {
   const { data, isLoading, isError, error } = useSuspenseQuery({
-    queryKey: ["articles"],
+    queryKey: ["articles", slug],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/get-by-slug/${slug}`
+        `${process.env.NEXT_PUBLIC_API}/articles/get-by-slug/${slug}`
       );
       return response.data.article;
     },
@@ -22,7 +22,7 @@ export const useFetchCollections = () => {
     queryKey: ["articles"],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/article-collections`
+        `${process.env.NEXT_PUBLIC_API}/articles/collections`
       );
       return response.data;
     },
@@ -33,10 +33,10 @@ export const useFetchCollections = () => {
 
 export const useFetchArticleByCategory = (category: string) => {
   const { data, isLoading, isSuccess, isError, isPending } = useSuspenseQuery({
-    queryKey: ["articles"],
+    queryKey: ["articles", category],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/collections/${category}`
+        `${process.env.NEXT_PUBLIC_API}/articles/${category}`
       );
       return response.data;
     },

@@ -17,7 +17,7 @@ export const useFetchDSAArticle = (slug: string) => {
 
 export const useFetchDSAArticleByCategory = (category: string) => {
   const { data, isLoading, isSuccess, isError, isPending } = useSuspenseQuery({
-    queryKey: ["articles"],
+    queryKey: ["articles", category],
     queryFn: async () => {
       const response = await axios.get(
         `${process.env.NEXT_PUBLIC_API}/dsa/collections/${category}`

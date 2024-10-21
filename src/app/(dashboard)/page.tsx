@@ -32,7 +32,7 @@ export default function Home() {
     queryKey: ["articles", currentPage],
     queryFn: async () => {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/article/articles?published=true&page=${currentPage}&limit=10`
+        `${process.env.NEXT_PUBLIC_API}/articles/get-all?published=true&page=${currentPage}&limit=10`
       );
       return response.data;
     },

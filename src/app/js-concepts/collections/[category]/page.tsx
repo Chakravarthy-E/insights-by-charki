@@ -24,7 +24,7 @@ function Category({ params }: Props) {
         {category}
       </h1>
       <div className="grid lg:grid-cols-2 gap-x-2 gap-y-2  md:grid-cols-2 sm:grid-cols-1 grid-flow-dense">
-        {data?.dsaArticles?.map((article: ArticleTypes) => (
+        {data?.jsArticles?.map((article: ArticleTypes) => (
           <ArticleCard article={article} key={article._id} />
         ))}
       </div>

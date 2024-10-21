@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { useFetchDSACollections } from "../_actions";
-import DSACategoryCard from "../_components/DSACategoryCard";
 import Loader from "@/components/global/loader";
+import { useFetchCollections } from "@/hooks/article";
+import CategoryCard from "../_components/CategoryCard";
 
 export interface CategoryType {
   count: number;
@@ -10,7 +10,7 @@ export interface CategoryType {
 }
 
 function Collections() {
-  const { data, isLoading } = useFetchDSACollections();
+  const { data, isLoading } = useFetchCollections();
 
   return (
     <>
@@ -19,11 +19,11 @@ function Collections() {
       ) : (
         <div className=" min-h-screen">
           <h1 className="capitalize text-3xl tracking-wider font-semibold text-blue-400 mb-4 font-outfit">
-            DSA Collections
+            JS Collections
           </h1>
           <div className="flex gap-2 flex-wrap">
-            {data?.collections?.map((category: CategoryType) => (
-              <DSACategoryCard key={category.category} category={category} />
+            {data?.jsCollections?.map((category: CategoryType) => (
+              <CategoryCard key={category.category} category={category} />
             ))}
           </div>
         </div>

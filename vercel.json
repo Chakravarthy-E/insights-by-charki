@@ -17,10 +17,6 @@
       "destination": "/dsa"
     },
     {
-      "source": "/dsa/:category/:slug",
-      "destination": "/dsa/[category]/[slug]"
-    },
-    {
       "source": "/dsa/collections",
       "destination": "/dsa/collections"
     },
@@ -28,7 +24,18 @@
       "source": "/dsa/collections/:category",
       "destination": "/dsa/collections/[category]"
     },
-
+    {
+      "source": "/js-concepts",
+      "destination": "/js-concepts"
+    },
+    {
+      "source": "/js-concepts/collections",
+      "destination": "/js-concepts/collections"
+    },
+    {
+      "source": "/js-concepts/collections/:category",
+      "destination": "/js-concepts/collections/[category]"
+    },
     {
       "source": "/(.*)",
       "destination": "/"
