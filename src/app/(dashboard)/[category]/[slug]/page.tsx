@@ -1,11 +1,12 @@
 "use client";
 
-import { useFetchArticle } from "@/hooks/article";
 import React, { useEffect } from "react";
 import Head from "next/head";
 import { notFound, usePathname } from "next/navigation";
 import { format } from "date-fns";
 import SocialShare from "@/components/global/social-share";
+import { useFetchArticle } from "../../_actions";
+import Loader from "@/components/global/loader";
 
 type Props = {
   params: {
@@ -39,9 +40,7 @@ function Article({ params }: Props) {
       </Head>
 
       {isLoading ? (
-        <div className="flex items-center justify-center min-h-screen">
-          Loading....
-        </div>
+        <Loader />
       ) : (
         <article className="py-8 px-4 sm:py-8 sm:px-6 lg:py-8 lg:px-8 space-y-6">
           <div className="flex flex-col lg:flex-row lg:justify-between items-start lg:items-center gap-4">

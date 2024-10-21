@@ -5,6 +5,8 @@ import { ReactQueryProvider } from "@/react-query/provider";
 import Navbar from "@/components/global/navbar";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import Footer from "@/components/global/footer";
+import { Suspense } from "react";
+import Loader from "@/components/global/loader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -49,7 +51,7 @@ export default function RootLayout({
               listClasses="text-muted-foreground hover:text-primary"
               activeClasses="text-primary font-bold"
             /> */}
-            {children}
+            <Suspense fallback={<Loader />}>{children}</Suspense>
             <Footer />
           </ThemeProvider>
         </ReactQueryProvider>

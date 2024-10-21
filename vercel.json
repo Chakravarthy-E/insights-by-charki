@@ -35,5 +35,6 @@
     }
   ],
 
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "alias": ["insights-by-chakri"]
 }

@@ -1,7 +1,8 @@
 "use client";
 import ArticleCard from "@/components/global/articles/ArticleCard";
+import Loader from "@/components/global/loader";
 import { Button } from "@/components/ui/button";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
@@ -27,7 +28,7 @@ export default function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const { data, isLoading, isSuccess } = useQuery({
+  const { data, isLoading, isSuccess } = useSuspenseQuery({
     queryKey: ["articles", currentPage],
     queryFn: async () => {
       const response = await axios.get(
@@ -38,7 +39,7 @@ export default function Home() {
   });
 
   if (isSuccess && data?.pagination?.totalPages !== totalPages) {
-    setTotalPages(data.pagination.totalPages);
+    setTotalPages(data?.pagination?.totalPages);
   }
 
   const handleNextPage = () => {
@@ -54,11 +55,7 @@ export default function Home() {
   };
 
   if (isLoading) {
-    return (
-      <p className="flex items-center justify-center min-h-screen">
-        Loading Articles...
-      </p>
-    );
+    return <Loader />;
   }
 
   return (
@@ -69,7 +66,7 @@ export default function Home() {
         </h1>
         <Link href={"/collections"}>
           <p className="text-blue-500 font-semibold hover:underline decoration-blue-500">
-            See Collections
+            Collections
           </p>
         </Link>
       </div>

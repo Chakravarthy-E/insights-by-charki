@@ -7,6 +7,7 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 import DSAArticleCard from "./_components/DSAArticleCard";
 import Link from "next/link";
+import Loader from "@/components/global/loader";
 
 interface ArticleTypes {
   _id: string;
@@ -51,11 +52,7 @@ function DSAPage() {
   };
 
   if (isLoading) {
-    return (
-      <p className="flex items-center justify-center min-h-screen">
-        Loading Articles...
-      </p>
-    );
+    return <Loader />;
   }
   return (
     <div className="my-4">
@@ -65,7 +62,7 @@ function DSAPage() {
         </h1>
         <Link href={"/dsa/collections"}>
           <p className="text-blue-500 font-semibold hover:underline decoration-blue-500">
-            See Collections
+            Collections
           </p>
         </Link>
       </div>

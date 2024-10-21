@@ -1,7 +1,8 @@
 "use client";
 import CategoryCard from "@/components/global/category-card";
-import { useFetchCollections } from "@/hooks/article";
 import React from "react";
+import { useFetchCollections } from "../_actions";
+import Loader from "@/components/global/loader";
 
 export interface CategoryType {
   count: number;
@@ -14,9 +15,7 @@ function Collections() {
   return (
     <>
       {isLoading ? (
-        <div className="flex items-center justify-center min-h-screen">
-          Loading....
-        </div>
+        <Loader />
       ) : (
         <div className=" min-h-screen">
           <h1 className="capitalize text-3xl tracking-wider font-semibold text-blue-500 mb-4 font-outfit">

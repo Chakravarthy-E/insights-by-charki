@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between w-full p-4 mb-4 shadow-md">
+    <nav className="flex items-center justify-between w-full p-4 mb-4">
       <Logo />
       <div className="lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -25,12 +25,12 @@ function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="p-4 bg-[#05061A]">
             <ul className="flex flex-col items-start mt-10 space-y-4 font-semibold font-raleway px-10">
-              <li>
+              <li className="w-full hover:text-blue-500">
                 <Link href={"/dsa"} onClick={handleLinkClick}>
                   DSA
                 </Link>
               </li>
-              <li>
+              <li className="w-full hover:text-blue-500">
                 <Link href={"/js-concepts"} onClick={handleLinkClick}>
                   JS Concepts
                 </Link>
